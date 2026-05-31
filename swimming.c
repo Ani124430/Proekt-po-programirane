@@ -24,6 +24,8 @@ void readworkout(Workout * w) {
         scanf("%f", &w->avrg_vreme);
         getchar();
 
+        printf("Dobavi polzite ot tazi trenirovka:\n");
+        fgets(w->polzi, MAX_OPISANIE+1, stdin);
     
 }
 
