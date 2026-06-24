@@ -15,6 +15,7 @@ int main() {
         printf("5.Zapazi faila\n");
         printf("6.Izhod\n");
         scanf("%d", &choice);
+        getchar();
 
         switch(choice) {
             case 1:
@@ -38,7 +39,7 @@ int main() {
                 printf("Izberi ot posochenite opcii\n");
 
         } 
-     } while(choice != 4);
+     } while(choice != 6);
 
 
     free(swimming.buffer);

@@ -32,6 +32,7 @@ void izvedi_vsichki_stilove (DynamicArray * swimming);
 void premahnistil (DynamicArray * swimming);
 void zapazi(DynamicArray* swimming);
 void zaredi(DynamicArray* swimming);
+void trimnewline(char* str);
 
 
 #endif

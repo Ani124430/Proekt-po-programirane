@@ -148,6 +148,11 @@ void zaredi(DynamicArray* swimming) {
     fclose(f);
 }
 
+void trimnewline(char* str) {
+    char* newline = strchr(str, '\n');
+    if (newline) *newline = '\0';
+}
+
 void zapazi(DynamicArray* swimming) {
     FILE *f = fopen("swimming.txt", "w");
     if( f == NULL) {
@@ -156,16 +161,32 @@ void zapazi(DynamicArray* swimming) {
     }
     fprintf(f, "%d\n", swimming->size);
     for(int i=0; i<swimming->size; i++) {
+        trimnewline(swimming->buffer[i].style);
         fprintf(f,"Stil:%s\n", swimming->buffer[i].style);
+
+        trimnewline(swimming->buffer[i].opisanie);
         fprintf(f,"Opisanie:%s\n", swimming->buffer[i].opisanie);
+
+        trimnewline(swimming->buffer[i].polzi);
         fprintf(f,"Polzi:%s\n", swimming->buffer[i].polzi);
+
         for(int j=0; j<MAX_WORKOUT;j++) {
+            trimnewline(swimming->buffer[i].arr[j].name);
             fprintf(f,"Ime:%s\n", swimming->buffer[i].arr[j].name);
+
+            trimnewline(swimming->buffer[i].arr[j].opisanie);
             fprintf(f,"Opisanie:%s\n", swimming->buffer[i].arr[j].opisanie);
+
+            trimnewline(swimming->buffer[i].arr[j].muskulnigrupi);
             fprintf(f,"Muskulni grupi:%s\n", swimming->buffer[i].arr[j].muskulnigrupi);
+
             fprintf(f,"Povtorenie:%d\n", swimming->buffer[i].arr[j].povtorenie);
+
             fprintf(f,"Serii:%d\n", swimming->buffer[i].arr[j].serii);
+
             fprintf(f,"Sredno vreme:%f\n", swimming->buffer[i].arr[j].avrg_vreme);
+
+            trimnewline(swimming->buffer[i].arr[j].polzi);
             fprintf(f,"Polzi:%s\n", swimming->buffer[i].arr[j].polzi);
         }
     }
