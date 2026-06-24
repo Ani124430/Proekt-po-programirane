@@ -9,7 +9,7 @@ typedef struct Node {
     struct Node * next;
 }Node;
 
-typedef struct {
+typedef struct LinkedList {
     Node *head;
     int size;
 }LinkedList;
@@ -18,7 +18,7 @@ LinkedList init();
 
 void pushBack(LinkedList* list, SwimmingStyle* value);
 void pop(LinkedList* list, uint index);
-void freeaList(LinkedList *list);
+void freeList(LinkedList *list);
 
 
 #endif

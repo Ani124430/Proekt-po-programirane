@@ -48,7 +48,7 @@ void pushBack(LinkedList *list, SwimmingStyle *value) {
     list->size++;
 }
 
-void freeaList(LinkedList *list) {
+void freeList(LinkedList *list) {
     Node *current= list->head;
     while(current !=NULL) {
     Node *temp = current->next;
